@@ -1,0 +1,23 @@
+# OpenSearch สำหรับเวิร์กช็อป: docker compose up -d   (setup.ps1 / setup.sh เรียกให้อัตโนมัติ)
+# ใช้ Docker เฉพาะ OpenSearch เพราะเป็นส่วนที่ติดตั้งยากที่สุด (Java + config) ส่วน Python ใช้ venv ปกติ
+services:
+  opensearch:
+    image: opensearchproject/opensearch:2.19.1      # รุ่นเดียวกับสไลด์ครู ไม่ใช้ latest
+    container_name: rag-workshop-opensearch
+    environment:
+      - discovery.type=single-node                  # เครื่องเดียว ไม่ต้องหา cluster
+      - DISABLE_SECURITY_PLUGIN=true                # ปิดรหัสผ่าน/https (ใช้ในเครื่องตัวเองเท่านั้น)
+      - DISABLE_INSTALL_DEMO_CONFIG=true
+      - OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g          # จำกัด RAM 1 GB
+    ports:
+      - "127.0.0.1:9200:9200"                       # เปิดให้เฉพาะเครื่องตัวเอง ไม่เปิดสู่ network
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data  # index อยู่รอดแม้ลบ container
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf localhost:9200 >/dev/null || exit 1"]
+      interval: 5s
+      retries: 30
+    restart: unless-stopped                         # เปิด Docker แล้ว OpenSearch ขึ้นเอง
+
+volumes:
+  opensearch-data:
