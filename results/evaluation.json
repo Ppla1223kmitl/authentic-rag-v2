@@ -1,0 +1,2080 @@
+{
+  "scope": "Development benchmark; real corpus; anchor-based relevance; no LLM answer evaluation",
+  "source_base_commit": "4567d3d",
+  "files": 4,
+  "chunks": 99,
+  "questions": 12,
+  "chunk_config": {
+    "unit": "unicode_characters",
+    "size": 1200,
+    "overlap": 150
+  },
+  "corpus_sha256": {
+    "1.md": "98d477174ea02b4768094510490e744d21326be7a3f5da0f39a21c6eaf3ef22f",
+    "2.md": "95950a88253488d6f79d8ff3249a4137ea2dfac90fa6b09bbf9a3cd06515b517",
+    "44.md": "ec67f8e6724a3e5ec63569f604065aa504555864cffab851be34f25b72778313",
+    "5555.md": "d5a7db4966b091311b000c07e86035cc46b8ac1a9bc69e11a0e5567301df562c"
+  },
+  "qrels": [
+    {
+      "id": "r1",
+      "query": "โรคหัดเยอรมันเกิดจากไวรัสอะไร",
+      "source": "1.md",
+      "anchor": "Rubella virus",
+      "relevant": [
+        "76d513f0d90fc83f1cbc2e7a3c185e065799a211eac896790cfbf60acb1553fc",
+        "f3c0199afb4c82881f7e7f49c730805d7e44d3b157f43dfbfc3cd6f96b52f916"
+      ]
+    },
+    {
+      "id": "r2",
+      "query": "หัดเยอรมันอันตรายต่อหญิงตั้งครรภ์ช่วงไหน",
+      "source": "1.md",
+      "anchor": "ไตรมาสแรก",
+      "relevant": [
+        "b955f919439b600a84ea27ea1db6f4179be266f4d46332a215fc417b57e4487d",
+        "fe2513905e470e4b5bd3edb6077dec4577fc9ae5dfc85629b3c154e80ae55103"
+      ]
+    },
+    {
+      "id": "r3",
+      "query": "วัคซีนรวมป้องกันหัดเยอรมันมีชื่อย่อว่าอะไร",
+      "source": "1.md",
+      "anchor": "MMR ย่อมาจาก",
+      "relevant": [
+        "8228a4d2cd86a534cf840293ada4646ad54f23c4c1b891a693900f12c6228241"
+      ]
+    },
+    {
+      "id": "c1",
+      "query": "แบคทีเรียก่ออหิวาตกโรคชื่ออะไร",
+      "source": "2.md",
+      "anchor": "Vibrio cholerae",
+      "relevant": [
+        "0104ec49e7904c2ab341cc3b6d9c7235e3ed8fb6a67b19020c8ba853fe413dbf",
+        "28a5dd02669118bdbaef5dbaa49f60f31696c0a1e1c20f75c609133a6de8dae9",
+        "37e70f393aed6d675c57c2d9b9ccfd668e02d55a60ebab9d231c72e67ff89c65",
+        "e5c070b7300c062f67e1dcb3372234c21c9ccd702dc410c98838c6b459a47e9b"
+      ]
+    },
+    {
+      "id": "c2",
+      "query": "ซีโรกรุ๊ปใดทำให้เกิดการระบาดอหิวาตกโรค",
+      "source": "2.md",
+      "anchor": "O139",
+      "relevant": [
+        "0104ec49e7904c2ab341cc3b6d9c7235e3ed8fb6a67b19020c8ba853fe413dbf",
+        "28a5dd02669118bdbaef5dbaa49f60f31696c0a1e1c20f75c609133a6de8dae9"
+      ]
+    },
+    {
+      "id": "c3",
+      "query": "อหิวาตกโรคมีชื่อเรียกอื่นอะไรบ้าง",
+      "source": "2.md",
+      "anchor": "โรคลงราก",
+      "relevant": [
+        "e29387a140aab4761b9372340020ec7673ee91296f12a180e6f67f1c4fc7d515",
+        "e5c070b7300c062f67e1dcb3372234c21c9ccd702dc410c98838c6b459a47e9b"
+      ]
+    },
+    {
+      "id": "e1",
+      "query": "เลนส์ตาอยู่ตำแหน่งใดของตา",
+      "source": "44.md",
+      "anchor": "อยู่หลังม่านตา",
+      "relevant": [
+        "bd171e34b3df60927212ce8c68cd716103334fcdc6b954f71de02bc44b91592e"
+      ]
+    },
+    {
+      "id": "e2",
+      "query": "ผ่าตัดต้อกระจกด้วยคลื่นเสียงเรียกว่าอะไร",
+      "source": "44.md",
+      "anchor": "Phacoemulsification",
+      "relevant": [
+        "015b13d81bec97944103949a5ccef5c6f506bdac5c399b90b84270a21418e1de",
+        "c054cf8f67c645a0050d135a2a85e65d6ec8f53b721964532e843ed960601270"
+      ]
+    },
+    {
+      "id": "e3",
+      "query": "เลนส์ตามีเส้นผ่าศูนย์กลางเท่าไร",
+      "source": "44.md",
+      "anchor": "9 มิลลิเมตร",
+      "relevant": [
+        "bd171e34b3df60927212ce8c68cd716103334fcdc6b954f71de02bc44b91592e"
+      ]
+    },
+    {
+      "id": "g1",
+      "query": "กรดไหลย้อนมีชื่อภาษาอังกฤษว่าอะไร",
+      "source": "5555.md",
+      "anchor": "Gastroesophageal reflux disease",
+      "relevant": [
+        "02cb6f41bd3962f853e1ab821dd20d69311bf0a75607a37ca62b42fa8dbe87e5",
+        "ce0513292789d2e02ddf9c42313ac953af7181e125465e781bf32a030b8fed29"
+      ]
+    },
+    {
+      "id": "g2",
+      "query": "กรดไหลย้อนเกิดจากอะไร",
+      "source": "5555.md",
+      "anchor": "เกิดจากภาวะหย่อนสมรรถภาพ",
+      "relevant": [
+        "f23808688bdb5543dea067e86568e64dd6d6cf3c8b7d58337c24c65b174eb2e6"
+      ]
+    },
+    {
+      "id": "g3",
+      "query": "อาการของโรคกรดไหลย้อนเป็นอย่างไร",
+      "source": "5555.md",
+      "anchor": "แสบร้อนกลางอก",
+      "relevant": [
+        "2dae17b9d50b77cb1f960826aeb9e6f7175aab158e9479c2e243c1d37860c932",
+        "ce0513292789d2e02ddf9c42313ac953af7181e125465e781bf32a030b8fed29"
+      ]
+    }
+  ],
+  "runs": {
+    "standard_bm25": {
+      "index": "rag-v2-standard-1792170971833304000",
+      "summary": {
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "mrr@1": 0,
+        "ndcg@1": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "mrr@5": 0,
+        "ndcg@5": 0.0,
+        "hit@10": 0,
+        "recall@10": 0.0,
+        "mrr@10": 0,
+        "ndcg@10": 0.0,
+        "latency_mean_ms": 2071.2314416402173
+      },
+      "cases": [
+        {
+          "id": "r1",
+          "query": "โรคหัดเยอรมันเกิดจากไวรัสอะไร",
+          "latency_ms": 2213.763599982485,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "r2",
+          "query": "หัดเยอรมันอันตรายต่อหญิงตั้งครรภ์ช่วงไหน",
+          "latency_ms": 2051.970199914649,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "r3",
+          "query": "วัคซีนรวมป้องกันหัดเยอรมันมีชื่อย่อว่าอะไร",
+          "latency_ms": 2075.6501000141725,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "c1",
+          "query": "แบคทีเรียก่ออหิวาตกโรคชื่ออะไร",
+          "latency_ms": 2062.4683999922127,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "c2",
+          "query": "ซีโรกรุ๊ปใดทำให้เกิดการระบาดอหิวาตกโรค",
+          "latency_ms": 2052.5853000581264,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "c3",
+          "query": "อหิวาตกโรคมีชื่อเรียกอื่นอะไรบ้าง",
+          "latency_ms": 2059.8277000244707,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "e1",
+          "query": "เลนส์ตาอยู่ตำแหน่งใดของตา",
+          "latency_ms": 2059.887099894695,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "e2",
+          "query": "ผ่าตัดต้อกระจกด้วยคลื่นเสียงเรียกว่าอะไร",
+          "latency_ms": 2064.5999999251217,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "e3",
+          "query": "เลนส์ตามีเส้นผ่าศูนย์กลางเท่าไร",
+          "latency_ms": 2060.025700018741,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "g1",
+          "query": "กรดไหลย้อนมีชื่อภาษาอังกฤษว่าอะไร",
+          "latency_ms": 2054.6013999264687,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "g2",
+          "query": "กรดไหลย้อนเกิดจากอะไร",
+          "latency_ms": 2054.1491999756545,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        },
+        {
+          "id": "g3",
+          "query": "อาการของโรคกรดไหลย้อนเป็นอย่างไร",
+          "latency_ms": 2045.248599955812,
+          "ranking": [],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 0,
+          "recall@5": 0.0,
+          "mrr@5": 0,
+          "ndcg@5": 0.0,
+          "hit@10": 0,
+          "recall@10": 0.0,
+          "mrr@10": 0,
+          "ndcg@10": 0.0
+        }
+      ]
+    },
+    "thai_bm25": {
+      "index": "rag-v2-thai-1792171008080427300",
+      "summary": {
+        "hit@1": 0.5,
+        "recall@1": 0.3125,
+        "mrr@1": 0.5,
+        "ndcg@1": 0.5,
+        "hit@5": 1,
+        "recall@5": 0.875,
+        "mrr@5": 0.6555555555555556,
+        "ndcg@5": 0.6785501429116128,
+        "hit@10": 1,
+        "recall@10": 0.9166666666666666,
+        "mrr@10": 0.6555555555555556,
+        "ndcg@10": 0.6946690098797187,
+        "latency_mean_ms": 2070.9891416384685
+      },
+      "cases": [
+        {
+          "id": "r1",
+          "query": "โรคหัดเยอรมันเกิดจากไวรัสอะไร",
+          "latency_ms": 2177.840800024569,
+          "ranking": [
+            {
+              "chunk_id": "fe2513905e470e4b5bd3edb6077dec4577fc9ae5dfc85629b3c154e80ae55103",
+              "source": "1.md",
+              "score": 5.742119,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "ca1511780b389ce53b917370586ac4dd3052ad182a80cdbd30b803b82ac9adf6",
+              "source": "1.md",
+              "score": 5.7417455,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2b7081a8041b9b39eeabf830362f1989adfa61bdc21ef9ef4e370701df61cf41",
+              "source": "1.md",
+              "score": 5.5289536,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76d513f0d90fc83f1cbc2e7a3c185e065799a211eac896790cfbf60acb1553fc",
+              "source": "1.md",
+              "score": 5.3114104,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cff39f89694055c76ff26d291579cb06d0c8da6c70c6b2930132d05561a0a762",
+              "source": "1.md",
+              "score": 4.830631,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "3081c191c8aa675cf82c5ede81f90ec603766867bcc4370101d446c8476e6189",
+              "source": "1.md",
+              "score": 4.5182776,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "9a4e0208a0464852452113deae52c920e77870b4e591233cbf7c6e1bbef088fc",
+              "source": "1.md",
+              "score": 3.1497564,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "094a2fdc7ae6f2cc26e334547b93b39e7dc509201e22281e11f3fa5d3cb8557c",
+              "source": "1.md",
+              "score": 3.047773,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "3db9299a4060731f4a1d882c62332cb400d679e38a61da81b0daaae6c76122cd",
+              "source": "1.md",
+              "score": 3.0234823,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4564c110cb80b567754f77e5daf4b2535677b39a05e5c553380f3fdeee75c2a7",
+              "source": "1.md",
+              "score": 3.0003896,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "318a1944934bad9aaa3ff101ef32f4adcba5aa3f4913295d2dc465383626d81b",
+              "source": "5555.md",
+              "score": 2.950367,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "6287970f506ae198eff99f7f5e59a6d1d22e0d5153b5b9bfce48b6bef0474031",
+              "source": "5555.md",
+              "score": 2.911587,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f3c0199afb4c82881f7e7f49c730805d7e44d3b157f43dfbfc3cd6f96b52f916",
+              "source": "1.md",
+              "score": 2.9084842,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "dadf1754c465a94e85e17514664c1363da74901fd95abdb1d1d6898fef57bf0d",
+              "source": "1.md",
+              "score": 2.902787,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "24bc525076aff699de7ba436176036e6c98d6b0bc8bf6e9c1e8bc2e422140af8",
+              "source": "1.md",
+              "score": 2.8707962,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b955f919439b600a84ea27ea1db6f4179be266f4d46332a215fc417b57e4487d",
+              "source": "1.md",
+              "score": 2.8570678,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "809978825170f4e8255873899b02fb1f7c9217d43a21e216def6ba461c0e17d2",
+              "source": "1.md",
+              "score": 2.8552446,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "8228a4d2cd86a534cf840293ada4646ad54f23c4c1b891a693900f12c6228241",
+              "source": "1.md",
+              "score": 2.7155604,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cc3d1aa86a4492b9c817f1cc0464d6b53f8b5c54b2619324227ac08d305b09fc",
+              "source": "1.md",
+              "score": 2.703471,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "27480ff372d1b722a5882120d32ade087f69a1292193b65fd7976fb676188772",
+              "source": "1.md",
+              "score": 2.703471,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 1,
+          "recall@5": 0.5,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.2640681225725909,
+          "hit@10": 1,
+          "recall@10": 0.5,
+          "mrr@10": 0.25,
+          "ndcg@10": 0.2640681225725909
+        },
+        {
+          "id": "r2",
+          "query": "หัดเยอรมันอันตรายต่อหญิงตั้งครรภ์ช่วงไหน",
+          "latency_ms": 2054.913599975407,
+          "ranking": [
+            {
+              "chunk_id": "2b7081a8041b9b39eeabf830362f1989adfa61bdc21ef9ef4e370701df61cf41",
+              "source": "1.md",
+              "score": 9.835013,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "24bc525076aff699de7ba436176036e6c98d6b0bc8bf6e9c1e8bc2e422140af8",
+              "source": "1.md",
+              "score": 8.298361,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fe2513905e470e4b5bd3edb6077dec4577fc9ae5dfc85629b3c154e80ae55103",
+              "source": "1.md",
+              "score": 7.4009447,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b955f919439b600a84ea27ea1db6f4179be266f4d46332a215fc417b57e4487d",
+              "source": "1.md",
+              "score": 6.942908,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "809978825170f4e8255873899b02fb1f7c9217d43a21e216def6ba461c0e17d2",
+              "source": "1.md",
+              "score": 6.92834,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "094a2fdc7ae6f2cc26e334547b93b39e7dc509201e22281e11f3fa5d3cb8557c",
+              "source": "1.md",
+              "score": 6.8909774,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "3db9299a4060731f4a1d882c62332cb400d679e38a61da81b0daaae6c76122cd",
+              "source": "1.md",
+              "score": 6.8909774,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cff39f89694055c76ff26d291579cb06d0c8da6c70c6b2930132d05561a0a762",
+              "source": "1.md",
+              "score": 6.8909774,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "bdbea319a209047c5d7396fd586b2efffe777a77538833a91f8840eeafa4d554",
+              "source": "1.md",
+              "score": 6.1927323,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2428bfc2c5e89c5578d86607bf29f9d35ec0c855fd085bf4c118d516bd4ae41b",
+              "source": "44.md",
+              "score": 6.0090055,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0effd62082e3024a2299f70c98e9049d28fece7533a015ebe8f9c35d6aa2ee77",
+              "source": "1.md",
+              "score": 5.9889517,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "912b745d1d003cbee4c36accfcebcd07146b2fc65ac9f32c74c02adae175646b",
+              "source": "1.md",
+              "score": 5.7374406,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4564c110cb80b567754f77e5daf4b2535677b39a05e5c553380f3fdeee75c2a7",
+              "source": "1.md",
+              "score": 4.6813602,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "8228a4d2cd86a534cf840293ada4646ad54f23c4c1b891a693900f12c6228241",
+              "source": "1.md",
+              "score": 4.4619513,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "27480ff372d1b722a5882120d32ade087f69a1292193b65fd7976fb676188772",
+              "source": "1.md",
+              "score": 4.09212,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "51b00bccbe905947d1851828371ba6a60f194b564ff70cea83f06eec2ab8ff7f",
+              "source": "2.md",
+              "score": 3.760307,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "582147af9379bbc14d34e70e7fe8fa07cbd1769c60f54c8ffaab1c27dcb89940",
+              "source": "1.md",
+              "score": 3.651587,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "ff464e87ab6a98cb05d43a9bbc25bdc520de86a07465c78b42345160abd58dc6",
+              "source": "2.md",
+              "score": 3.6000512,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cc3d1aa86a4492b9c817f1cc0464d6b53f8b5c54b2619324227ac08d305b09fc",
+              "source": "1.md",
+              "score": 3.2719235,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f23808688bdb5543dea067e86568e64dd6d6cf3c8b7d58337c24c65b174eb2e6",
+              "source": "5555.md",
+              "score": 2.9646585,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 0.3333333333333333,
+          "ndcg@5": 0.5706417189553201,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 0.3333333333333333,
+          "ndcg@10": 0.5706417189553201
+        },
+        {
+          "id": "r3",
+          "query": "วัคซีนรวมป้องกันหัดเยอรมันมีชื่อย่อว่าอะไร",
+          "latency_ms": 2064.168000011705,
+          "ranking": [
+            {
+              "chunk_id": "8228a4d2cd86a534cf840293ada4646ad54f23c4c1b891a693900f12c6228241",
+              "source": "1.md",
+              "score": 13.713305,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2b7081a8041b9b39eeabf830362f1989adfa61bdc21ef9ef4e370701df61cf41",
+              "source": "1.md",
+              "score": 10.040494,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e2fd2bf3ea4f6b67ded9051cd539284ac8558423cc053f2e484e2d3158b758af",
+              "source": "2.md",
+              "score": 6.914792,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "818d206d1d7249d440997d16086524ef105b2a3363393cc0cc8b8e6b1b040448",
+              "source": "1.md",
+              "score": 6.467114,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "3081c191c8aa675cf82c5ede81f90ec603766867bcc4370101d446c8476e6189",
+              "source": "1.md",
+              "score": 6.2311516,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4564c110cb80b567754f77e5daf4b2535677b39a05e5c553380f3fdeee75c2a7",
+              "source": "1.md",
+              "score": 5.0257316,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "582147af9379bbc14d34e70e7fe8fa07cbd1769c60f54c8ffaab1c27dcb89940",
+              "source": "1.md",
+              "score": 4.361416,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0104ec49e7904c2ab341cc3b6d9c7235e3ed8fb6a67b19020c8ba853fe413dbf",
+              "source": "2.md",
+              "score": 4.0538754,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "24bc525076aff699de7ba436176036e6c98d6b0bc8bf6e9c1e8bc2e422140af8",
+              "source": "1.md",
+              "score": 3.8651268,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e5c070b7300c062f67e1dcb3372234c21c9ccd702dc410c98838c6b459a47e9b",
+              "source": "2.md",
+              "score": 3.6027317,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2428bfc2c5e89c5578d86607bf29f9d35ec0c855fd085bf4c118d516bd4ae41b",
+              "source": "44.md",
+              "score": 3.1011474,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0e24c65babc676f520158366730c7d73a4c14d4c09b226d07872b6fa72c7f458",
+              "source": "44.md",
+              "score": 2.8653975,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b1f23321a07b670b6c4e25f452fdcc426a964f8280f813873273e3fe598d6ce2",
+              "source": "2.md",
+              "score": 2.7703946,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2036f3580eca9479c58cf48aa7ef126e17515a235bbbac8c90f95efde9075ab1",
+              "source": "2.md",
+              "score": 2.6825874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "873f13a4ee052d076a28b514be25d829a3917f0f1c55921d924e44a304fabac3",
+              "source": "2.md",
+              "score": 2.6825874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6429121c97893f0f48c19a4fbb38a00dcfd6f02057a85f6068efb774aea1c03",
+              "source": "2.md",
+              "score": 2.6825874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cb13f3644ee59d9c9543b2932d507a2ec0b518094453dd41515b7be4ec187600",
+              "source": "44.md",
+              "score": 2.6825874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "ac4ee0dcb3e1301841af8f0940c5335dc451da979e94436782bacede9e356a61",
+              "source": "44.md",
+              "score": 2.6825874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fe2513905e470e4b5bd3edb6077dec4577fc9ae5dfc85629b3c154e80ae55103",
+              "source": "1.md",
+              "score": 2.3082023,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "3db9299a4060731f4a1d882c62332cb400d679e38a61da81b0daaae6c76122cd",
+              "source": "1.md",
+              "score": 2.3082023,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 1,
+          "recall@1": 1.0,
+          "mrr@1": 1.0,
+          "ndcg@1": 1.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        {
+          "id": "c1",
+          "query": "แบคทีเรียก่ออหิวาตกโรคชื่ออะไร",
+          "latency_ms": 2068.398299976252,
+          "ranking": [
+            {
+              "chunk_id": "37e70f393aed6d675c57c2d9b9ccfd668e02d55a60ebab9d231c72e67ff89c65",
+              "source": "2.md",
+              "score": 8.712524,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0104ec49e7904c2ab341cc3b6d9c7235e3ed8fb6a67b19020c8ba853fe413dbf",
+              "source": "2.md",
+              "score": 8.514031,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e5c070b7300c062f67e1dcb3372234c21c9ccd702dc410c98838c6b459a47e9b",
+              "source": "2.md",
+              "score": 8.157239,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "28a5dd02669118bdbaef5dbaa49f60f31696c0a1e1c20f75c609133a6de8dae9",
+              "source": "2.md",
+              "score": 8.088927,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e29387a140aab4761b9372340020ec7673ee91296f12a180e6f67f1c4fc7d515",
+              "source": "2.md",
+              "score": 5.317246,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "51b00bccbe905947d1851828371ba6a60f194b564ff70cea83f06eec2ab8ff7f",
+              "source": "2.md",
+              "score": 5.1290426,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "47f7f65f98b9a8e7796fea58743f3cbdc89d191ab618732588c6775d5525c2a5",
+              "source": "2.md",
+              "score": 4.4801397,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "9a4e0208a0464852452113deae52c920e77870b4e591233cbf7c6e1bbef088fc",
+              "source": "1.md",
+              "score": 3.0809827,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "8e21e0cc9d7bb24ecf47b0a35d30d5e5f99c7e6709d6767262550bf1b21820f5",
+              "source": "2.md",
+              "score": 2.8567097,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76d513f0d90fc83f1cbc2e7a3c185e065799a211eac896790cfbf60acb1553fc",
+              "source": "1.md",
+              "score": 2.8326874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cff39f89694055c76ff26d291579cb06d0c8da6c70c6b2930132d05561a0a762",
+              "source": "1.md",
+              "score": 2.8326874,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6429121c97893f0f48c19a4fbb38a00dcfd6f02057a85f6068efb774aea1c03",
+              "source": "2.md",
+              "score": 2.7439833,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fc4ceb16b817d000359f6fcb984b397a92419db24e14e80cd851fce20d073fec",
+              "source": "5555.md",
+              "score": 2.7119646,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "318a1944934bad9aaa3ff101ef32f4adcba5aa3f4913295d2dc465383626d81b",
+              "source": "5555.md",
+              "score": 2.7119646,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b1f23321a07b670b6c4e25f452fdcc426a964f8280f813873273e3fe598d6ce2",
+              "source": "2.md",
+              "score": 2.5189025,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "870379470758a8b649d273ad74d06c60e798f6701ad5dc21c8589497fb2abadd",
+              "source": "2.md",
+              "score": 2.488851,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0d5bf30973472c6a1f8fd684dbaf2a61ba38aa0221451980be4ce9264a3e89b2",
+              "source": "2.md",
+              "score": 2.284649,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "873f13a4ee052d076a28b514be25d829a3917f0f1c55921d924e44a304fabac3",
+              "source": "2.md",
+              "score": 2.1773448,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76c467357b893930b21a33ccb3ba6406a17137a581add30f76ea7623d6323e09",
+              "source": "2.md",
+              "score": 1.9088715,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "9b193627ebebca81965e75842fb546430635a0016feb883b46a11e2e9826457a",
+              "source": "2.md",
+              "score": 1.83338,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 1,
+          "recall@1": 0.25,
+          "mrr@1": 1.0,
+          "ndcg@1": 1.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        {
+          "id": "c2",
+          "query": "ซีโรกรุ๊ปใดทำให้เกิดการระบาดอหิวาตกโรค",
+          "latency_ms": 2065.29880000744,
+          "ranking": [
+            {
+              "chunk_id": "0104ec49e7904c2ab341cc3b6d9c7235e3ed8fb6a67b19020c8ba853fe413dbf",
+              "source": "2.md",
+              "score": 23.857918,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "28a5dd02669118bdbaef5dbaa49f60f31696c0a1e1c20f75c609133a6de8dae9",
+              "source": "2.md",
+              "score": 19.372791,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "8e21e0cc9d7bb24ecf47b0a35d30d5e5f99c7e6709d6767262550bf1b21820f5",
+              "source": "2.md",
+              "score": 9.1435375,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e29387a140aab4761b9372340020ec7673ee91296f12a180e6f67f1c4fc7d515",
+              "source": "2.md",
+              "score": 9.061176,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b1f23321a07b670b6c4e25f452fdcc426a964f8280f813873273e3fe598d6ce2",
+              "source": "2.md",
+              "score": 8.057043,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "37e70f393aed6d675c57c2d9b9ccfd668e02d55a60ebab9d231c72e67ff89c65",
+              "source": "2.md",
+              "score": 6.5213985,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e5c070b7300c062f67e1dcb3372234c21c9ccd702dc410c98838c6b459a47e9b",
+              "source": "2.md",
+              "score": 6.328535,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "ff464e87ab6a98cb05d43a9bbc25bdc520de86a07465c78b42345160abd58dc6",
+              "source": "2.md",
+              "score": 6.0661073,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2b7081a8041b9b39eeabf830362f1989adfa61bdc21ef9ef4e370701df61cf41",
+              "source": "1.md",
+              "score": 5.475438,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "51b00bccbe905947d1851828371ba6a60f194b564ff70cea83f06eec2ab8ff7f",
+              "source": "2.md",
+              "score": 5.4199495,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e2fd2bf3ea4f6b67ded9051cd539284ac8558423cc053f2e484e2d3158b758af",
+              "source": "2.md",
+              "score": 5.4101577,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76c467357b893930b21a33ccb3ba6406a17137a581add30f76ea7623d6323e09",
+              "source": "2.md",
+              "score": 4.9914117,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "47f7f65f98b9a8e7796fea58743f3cbdc89d191ab618732588c6775d5525c2a5",
+              "source": "2.md",
+              "score": 4.599285,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "3db9299a4060731f4a1d882c62332cb400d679e38a61da81b0daaae6c76122cd",
+              "source": "1.md",
+              "score": 4.435102,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0d5bf30973472c6a1f8fd684dbaf2a61ba38aa0221451980be4ce9264a3e89b2",
+              "source": "2.md",
+              "score": 4.4314976,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fc4ceb16b817d000359f6fcb984b397a92419db24e14e80cd851fce20d073fec",
+              "source": "5555.md",
+              "score": 4.324421,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6429121c97893f0f48c19a4fbb38a00dcfd6f02057a85f6068efb774aea1c03",
+              "source": "2.md",
+              "score": 4.3217425,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "870379470758a8b649d273ad74d06c60e798f6701ad5dc21c8589497fb2abadd",
+              "source": "2.md",
+              "score": 4.1743593,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f96762f990125b85d2822334242f391a93c09d989f0652e5d6f745a4a2cd79e0",
+              "source": "44.md",
+              "score": 3.5653653,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f3c0199afb4c82881f7e7f49c730805d7e44d3b157f43dfbfc3cd6f96b52f916",
+              "source": "1.md",
+              "score": 3.2566762,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 1,
+          "recall@1": 0.5,
+          "mrr@1": 1.0,
+          "ndcg@1": 1.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        {
+          "id": "c3",
+          "query": "อหิวาตกโรคมีชื่อเรียกอื่นอะไรบ้าง",
+          "latency_ms": 2063.611499965191,
+          "ranking": [
+            {
+              "chunk_id": "0104ec49e7904c2ab341cc3b6d9c7235e3ed8fb6a67b19020c8ba853fe413dbf",
+              "source": "2.md",
+              "score": 10.548605,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e5c070b7300c062f67e1dcb3372234c21c9ccd702dc410c98838c6b459a47e9b",
+              "source": "2.md",
+              "score": 8.143675,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e29387a140aab4761b9372340020ec7673ee91296f12a180e6f67f1c4fc7d515",
+              "source": "2.md",
+              "score": 7.8600245,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cc3d1aa86a4492b9c817f1cc0464d6b53f8b5c54b2619324227ac08d305b09fc",
+              "source": "1.md",
+              "score": 4.3850803,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fe2513905e470e4b5bd3edb6077dec4577fc9ae5dfc85629b3c154e80ae55103",
+              "source": "1.md",
+              "score": 3.7705784,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "37e70f393aed6d675c57c2d9b9ccfd668e02d55a60ebab9d231c72e67ff89c65",
+              "source": "2.md",
+              "score": 3.7382922,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "51b00bccbe905947d1851828371ba6a60f194b564ff70cea83f06eec2ab8ff7f",
+              "source": "2.md",
+              "score": 3.6517787,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "12c5353e3805ce3353e015a6e1bbf3017fd1d5fff3e0a34745650c6ed8ca0f96",
+              "source": "44.md",
+              "score": 3.6061354,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "ec5641930fb38e6ba853e537c0512ef8de79093a79f83dac95c98a47651af080",
+              "source": "2.md",
+              "score": 3.3899703,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "28a5dd02669118bdbaef5dbaa49f60f31696c0a1e1c20f75c609133a6de8dae9",
+              "source": "2.md",
+              "score": 3.2984402,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2428bfc2c5e89c5578d86607bf29f9d35ec0c855fd085bf4c118d516bd4ae41b",
+              "source": "44.md",
+              "score": 3.2216053,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b955f919439b600a84ea27ea1db6f4179be266f4d46332a215fc417b57e4487d",
+              "source": "1.md",
+              "score": 3.0781965,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76d513f0d90fc83f1cbc2e7a3c185e065799a211eac896790cfbf60acb1553fc",
+              "source": "1.md",
+              "score": 2.9969254,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "8e21e0cc9d7bb24ecf47b0a35d30d5e5f99c7e6709d6767262550bf1b21820f5",
+              "source": "2.md",
+              "score": 2.8567097,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "33fbdd451b685eb62949417bb67da61b2b8ac89f4869a0af2b0f6eaa10a63ce1",
+              "source": "2.md",
+              "score": 2.8023806,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6429121c97893f0f48c19a4fbb38a00dcfd6f02057a85f6068efb774aea1c03",
+              "source": "2.md",
+              "score": 2.7439833,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b1f23321a07b670b6c4e25f452fdcc426a964f8280f813873273e3fe598d6ce2",
+              "source": "2.md",
+              "score": 2.5189025,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "870379470758a8b649d273ad74d06c60e798f6701ad5dc21c8589497fb2abadd",
+              "source": "2.md",
+              "score": 2.488851,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0d5bf30973472c6a1f8fd684dbaf2a61ba38aa0221451980be4ce9264a3e89b2",
+              "source": "2.md",
+              "score": 2.284649,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "873f13a4ee052d076a28b514be25d829a3917f0f1c55921d924e44a304fabac3",
+              "source": "2.md",
+              "score": 2.1773448,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6934264036172708,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 0.5,
+          "ndcg@10": 0.6934264036172708
+        },
+        {
+          "id": "e1",
+          "query": "เลนส์ตาอยู่ตำแหน่งใดของตา",
+          "latency_ms": 2050.705499947071,
+          "ranking": [
+            {
+              "chunk_id": "25ac47576f958a144471fc524ecddc1ae2707f8d478df1a009219882ab828270",
+              "source": "44.md",
+              "score": 14.144402,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0e24c65babc676f520158366730c7d73a4c14d4c09b226d07872b6fa72c7f458",
+              "source": "44.md",
+              "score": 8.54413,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "7127a326d9021aef492526befc036e92c57dd9655a0844d6642170061cafd016",
+              "source": "44.md",
+              "score": 7.980981,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "bd171e34b3df60927212ce8c68cd716103334fcdc6b954f71de02bc44b91592e",
+              "source": "44.md",
+              "score": 7.2290497,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c054cf8f67c645a0050d135a2a85e65d6ec8f53b721964532e843ed960601270",
+              "source": "44.md",
+              "score": 7.034482,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f96762f990125b85d2822334242f391a93c09d989f0652e5d6f745a4a2cd79e0",
+              "source": "44.md",
+              "score": 6.28144,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "27480ff372d1b722a5882120d32ade087f69a1292193b65fd7976fb676188772",
+              "source": "1.md",
+              "score": 6.055231,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "dd0138ff57e0917b256cacda3094a904960f5d915ef393aa6f675c16f5f76d08",
+              "source": "44.md",
+              "score": 5.962904,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "56203f477c9a09d1c9aa9e909ba146602e1e05234bebdcfa2947f8957d062827",
+              "source": "44.md",
+              "score": 5.677966,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "12c5353e3805ce3353e015a6e1bbf3017fd1d5fff3e0a34745650c6ed8ca0f96",
+              "source": "44.md",
+              "score": 4.938092,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4509eef19defa8dd16b58d122aeb1d3460cfc9b311f6f5ac662445aafd6136cd",
+              "source": "44.md",
+              "score": 4.8361654,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2887864f29a7ca586a859af1f82ec31ccc143df75f7d1a8dc91895995264c263",
+              "source": "44.md",
+              "score": 4.8181524,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a85dd97705c089fcf87138950e355835d57fca58f557df37a411da90ef3fd2d5",
+              "source": "44.md",
+              "score": 4.8071404,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a97ddfefeca7469c2857553d965fdbcff09b10c77a114a653cfc3b2e529a2991",
+              "source": "44.md",
+              "score": 4.7320943,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "87ef28df51700b2b69b4ec67400e3ed89ad1f9d9b020c87d9a24f1555dba1ba2",
+              "source": "44.md",
+              "score": 4.654334,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "015b13d81bec97944103949a5ccef5c6f506bdac5c399b90b84270a21418e1de",
+              "source": "44.md",
+              "score": 4.6500864,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f3c0199afb4c82881f7e7f49c730805d7e44d3b157f43dfbfc3cd6f96b52f916",
+              "source": "1.md",
+              "score": 4.57931,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2b7081a8041b9b39eeabf830362f1989adfa61bdc21ef9ef4e370701df61cf41",
+              "source": "1.md",
+              "score": 4.4773865,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a646e49ce789b0cf2c457b0043f5ca67f481247113a616790759a66a7cf84c7e",
+              "source": "44.md",
+              "score": 4.4532447,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2428bfc2c5e89c5578d86607bf29f9d35ec0c855fd085bf4c118d516bd4ae41b",
+              "source": "44.md",
+              "score": 4.40991,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.43067655807339306,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 0.25,
+          "ndcg@10": 0.43067655807339306
+        },
+        {
+          "id": "e2",
+          "query": "ผ่าตัดต้อกระจกด้วยคลื่นเสียงเรียกว่าอะไร",
+          "latency_ms": 2052.2799999453127,
+          "ranking": [
+            {
+              "chunk_id": "a97ddfefeca7469c2857553d965fdbcff09b10c77a114a653cfc3b2e529a2991",
+              "source": "44.md",
+              "score": 14.609497,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "87ef28df51700b2b69b4ec67400e3ed89ad1f9d9b020c87d9a24f1555dba1ba2",
+              "source": "44.md",
+              "score": 14.090893,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "015b13d81bec97944103949a5ccef5c6f506bdac5c399b90b84270a21418e1de",
+              "source": "44.md",
+              "score": 13.353645,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c054cf8f67c645a0050d135a2a85e65d6ec8f53b721964532e843ed960601270",
+              "source": "44.md",
+              "score": 11.105192,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4509eef19defa8dd16b58d122aeb1d3460cfc9b311f6f5ac662445aafd6136cd",
+              "source": "44.md",
+              "score": 10.508891,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "dd0138ff57e0917b256cacda3094a904960f5d915ef393aa6f675c16f5f76d08",
+              "source": "44.md",
+              "score": 9.706176,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0e24c65babc676f520158366730c7d73a4c14d4c09b226d07872b6fa72c7f458",
+              "source": "44.md",
+              "score": 8.761646,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "12c5353e3805ce3353e015a6e1bbf3017fd1d5fff3e0a34745650c6ed8ca0f96",
+              "source": "44.md",
+              "score": 8.489681,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a85dd97705c089fcf87138950e355835d57fca58f557df37a411da90ef3fd2d5",
+              "source": "44.md",
+              "score": 7.2155905,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e19deb1bec07a6a0ab1881c10b4423b21593e54153c43798a576862178612221",
+              "source": "5555.md",
+              "score": 6.4046497,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "25ac47576f958a144471fc524ecddc1ae2707f8d478df1a009219882ab828270",
+              "source": "44.md",
+              "score": 5.87002,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "959f810d6347be65d1209405da29c80566ef5e1f3fe1144d3f18a01bbad156e6",
+              "source": "5555.md",
+              "score": 5.2936506,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4564c110cb80b567754f77e5daf4b2535677b39a05e5c553380f3fdeee75c2a7",
+              "source": "1.md",
+              "score": 5.2154903,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2428bfc2c5e89c5578d86607bf29f9d35ec0c855fd085bf4c118d516bd4ae41b",
+              "source": "44.md",
+              "score": 5.0645027,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "582147af9379bbc14d34e70e7fe8fa07cbd1769c60f54c8ffaab1c27dcb89940",
+              "source": "1.md",
+              "score": 4.9554605,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76bffe2c8361b688b10e39b722815667eac5a99ab784af08869af1f15625b14c",
+              "source": "5555.md",
+              "score": 4.75231,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "7127a326d9021aef492526befc036e92c57dd9655a0844d6642170061cafd016",
+              "source": "44.md",
+              "score": 4.7446766,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a646e49ce789b0cf2c457b0043f5ca67f481247113a616790759a66a7cf84c7e",
+              "source": "44.md",
+              "score": 4.570552,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2dae17b9d50b77cb1f960826aeb9e6f7175aab158e9479c2e243c1d37860c932",
+              "source": "5555.md",
+              "score": 3.6111035,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "47f7f65f98b9a8e7796fea58743f3cbdc89d191ab618732588c6775d5525c2a5",
+              "source": "2.md",
+              "score": 3.4852982,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 0.3333333333333333,
+          "ndcg@5": 0.5706417189553201,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 0.3333333333333333,
+          "ndcg@10": 0.5706417189553201
+        },
+        {
+          "id": "e3",
+          "query": "เลนส์ตามีเส้นผ่าศูนย์กลางเท่าไร",
+          "latency_ms": 2087.3136000009254,
+          "ranking": [
+            {
+              "chunk_id": "bd171e34b3df60927212ce8c68cd716103334fcdc6b954f71de02bc44b91592e",
+              "source": "44.md",
+              "score": 8.482144,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4509eef19defa8dd16b58d122aeb1d3460cfc9b311f6f5ac662445aafd6136cd",
+              "source": "44.md",
+              "score": 7.0782557,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "25ac47576f958a144471fc524ecddc1ae2707f8d478df1a009219882ab828270",
+              "source": "44.md",
+              "score": 6.96807,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "7127a326d9021aef492526befc036e92c57dd9655a0844d6642170061cafd016",
+              "source": "44.md",
+              "score": 5.988937,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "0e24c65babc676f520158366730c7d73a4c14d4c09b226d07872b6fa72c7f458",
+              "source": "44.md",
+              "score": 5.971675,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c054cf8f67c645a0050d135a2a85e65d6ec8f53b721964532e843ed960601270",
+              "source": "44.md",
+              "score": 5.876722,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "015b13d81bec97944103949a5ccef5c6f506bdac5c399b90b84270a21418e1de",
+              "source": "44.md",
+              "score": 4.6500864,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "12c5353e3805ce3353e015a6e1bbf3017fd1d5fff3e0a34745650c6ed8ca0f96",
+              "source": "44.md",
+              "score": 2.469046,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2887864f29a7ca586a859af1f82ec31ccc143df75f7d1a8dc91895995264c263",
+              "source": "44.md",
+              "score": 2.4090762,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a85dd97705c089fcf87138950e355835d57fca58f557df37a411da90ef3fd2d5",
+              "source": "44.md",
+              "score": 2.4035702,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a97ddfefeca7469c2857553d965fdbcff09b10c77a114a653cfc3b2e529a2991",
+              "source": "44.md",
+              "score": 2.3660471,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "87ef28df51700b2b69b4ec67400e3ed89ad1f9d9b020c87d9a24f1555dba1ba2",
+              "source": "44.md",
+              "score": 2.327167,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "a646e49ce789b0cf2c457b0043f5ca67f481247113a616790759a66a7cf84c7e",
+              "source": "44.md",
+              "score": 2.2266223,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2428bfc2c5e89c5578d86607bf29f9d35ec0c855fd085bf4c118d516bd4ae41b",
+              "source": "44.md",
+              "score": 2.204955,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "b955f919439b600a84ea27ea1db6f4179be266f4d46332a215fc417b57e4487d",
+              "source": "1.md",
+              "score": 2.1628618,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f96762f990125b85d2822334242f391a93c09d989f0652e5d6f745a4a2cd79e0",
+              "source": "44.md",
+              "score": 2.1628618,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "27480ff372d1b722a5882120d32ade087f69a1292193b65fd7976fb676188772",
+              "source": "1.md",
+              "score": 2.0274975,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "dd0138ff57e0917b256cacda3094a904960f5d915ef393aa6f675c16f5f76d08",
+              "source": "44.md",
+              "score": 2.003594,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "dadf1754c465a94e85e17514664c1363da74901fd95abdb1d1d6898fef57bf0d",
+              "source": "1.md",
+              "score": 1.7737347,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "cb13f3644ee59d9c9543b2932d507a2ec0b518094453dd41515b7be4ec187600",
+              "source": "44.md",
+              "score": 1.6941643,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 1,
+          "recall@1": 1.0,
+          "mrr@1": 1.0,
+          "ndcg@1": 1.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 1.0
+        },
+        {
+          "id": "g1",
+          "query": "กรดไหลย้อนมีชื่อภาษาอังกฤษว่าอะไร",
+          "latency_ms": 2045.4613999463618,
+          "ranking": [
+            {
+              "chunk_id": "ce0513292789d2e02ddf9c42313ac953af7181e125465e781bf32a030b8fed29",
+              "source": "5555.md",
+              "score": 7.2974124,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "d2a71708b94c51164494dd5daba7f81c328af529c204b8ba6a37c0d7236b8f4c",
+              "source": "5555.md",
+              "score": 6.8776083,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "72be6f2ccd409159b2a6ef0e8d5f2eeb1333eee236d360b4a3e95ae980076871",
+              "source": "5555.md",
+              "score": 6.6763544,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c58164bc8d15eda07d10590acdff364a0ee826590343c50f932f6a5c9433c66c",
+              "source": "5555.md",
+              "score": 6.6723986,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f23808688bdb5543dea067e86568e64dd6d6cf3c8b7d58337c24c65b174eb2e6",
+              "source": "5555.md",
+              "score": 6.3206277,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "56e0d5fc1fabb549753a5e4527d3835024504187ecb3faccb1c540857d80080a",
+              "source": "5555.md",
+              "score": 6.2940583,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76bffe2c8361b688b10e39b722815667eac5a99ab784af08869af1f15625b14c",
+              "source": "5555.md",
+              "score": 6.2867765,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "02cb6f41bd3962f853e1ab821dd20d69311bf0a75607a37ca62b42fa8dbe87e5",
+              "source": "5555.md",
+              "score": 6.2867765,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "daf47ec9338156501faffffe9a760a466779e21f334ab5e51ee149376d8db921",
+              "source": "5555.md",
+              "score": 6.167667,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c22dcb4792577c0482eb85bc814be36a336d013c8e699f8133703eadca271c8c",
+              "source": "5555.md",
+              "score": 6.0058203,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "19a5a5ba0bb0fdee36b8f0b57688830d9bc210bda852850348df86b2e3a5def9",
+              "source": "5555.md",
+              "score": 6.001538,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "55b32b2b19c75d07e884cc880ef42ae758e5741395e5e7e1c1a395da4c310676",
+              "source": "5555.md",
+              "score": 5.9531355,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "6287970f506ae198eff99f7f5e59a6d1d22e0d5153b5b9bfce48b6bef0474031",
+              "source": "5555.md",
+              "score": 5.8678737,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6dec5dd579e8a69c5db9b54f65ce1a04713e8e82789619e5faeb217aa2faa9c",
+              "source": "5555.md",
+              "score": 5.5130625,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c56875570d730be0858808e331e89daf3e9e675b1a18bd4742dda019b2d355df",
+              "source": "5555.md",
+              "score": 4.4315777,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "15cda9766dfc274e6c18f7b4a39d7cbf323a9831abe56ebd39537839171e7fb4",
+              "source": "5555.md",
+              "score": 4.42411,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4321f0600060834edd457db5a3e81438666445ac1222cf2b05f1a59f7f9d2500",
+              "source": "5555.md",
+              "score": 4.2940598,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fc4ceb16b817d000359f6fcb984b397a92419db24e14e80cd851fce20d073fec",
+              "source": "5555.md",
+              "score": 4.2470636,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e19deb1bec07a6a0ab1881c10b4423b21593e54153c43798a576862178612221",
+              "source": "5555.md",
+              "score": 4.1939793,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76d513f0d90fc83f1cbc2e7a3c185e065799a211eac896790cfbf60acb1553fc",
+              "source": "1.md",
+              "score": 4.101628,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 1,
+          "recall@1": 0.5,
+          "mrr@1": 1.0,
+          "ndcg@1": 1.0,
+          "hit@5": 1,
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "ndcg@10": 0.8065735963827293
+        },
+        {
+          "id": "g2",
+          "query": "กรดไหลย้อนเกิดจากอะไร",
+          "latency_ms": 2054.145799949765,
+          "ranking": [
+            {
+              "chunk_id": "ce0513292789d2e02ddf9c42313ac953af7181e125465e781bf32a030b8fed29",
+              "source": "5555.md",
+              "score": 7.891592,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c58164bc8d15eda07d10590acdff364a0ee826590343c50f932f6a5c9433c66c",
+              "source": "5555.md",
+              "score": 7.2363563,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "d2a71708b94c51164494dd5daba7f81c328af529c204b8ba6a37c0d7236b8f4c",
+              "source": "5555.md",
+              "score": 7.2169023,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "72be6f2ccd409159b2a6ef0e8d5f2eeb1333eee236d360b4a3e95ae980076871",
+              "source": "5555.md",
+              "score": 7.1881537,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f23808688bdb5543dea067e86568e64dd6d6cf3c8b7d58337c24c65b174eb2e6",
+              "source": "5555.md",
+              "score": 6.9970703,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "56e0d5fc1fabb549753a5e4527d3835024504187ecb3faccb1c540857d80080a",
+              "source": "5555.md",
+              "score": 6.8306723,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "daf47ec9338156501faffffe9a760a466779e21f334ab5e51ee149376d8db921",
+              "source": "5555.md",
+              "score": 6.7316246,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76bffe2c8361b688b10e39b722815667eac5a99ab784af08869af1f15625b14c",
+              "source": "5555.md",
+              "score": 6.6405306,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "55b32b2b19c75d07e884cc880ef42ae758e5741395e5e7e1c1a395da4c310676",
+              "source": "5555.md",
+              "score": 6.4088526,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "02cb6f41bd3962f853e1ab821dd20d69311bf0a75607a37ca62b42fa8dbe87e5",
+              "source": "5555.md",
+              "score": 6.2867765,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c22dcb4792577c0482eb85bc814be36a336d013c8e699f8133703eadca271c8c",
+              "source": "5555.md",
+              "score": 6.0058203,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "19a5a5ba0bb0fdee36b8f0b57688830d9bc210bda852850348df86b2e3a5def9",
+              "source": "5555.md",
+              "score": 6.001538,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "6287970f506ae198eff99f7f5e59a6d1d22e0d5153b5b9bfce48b6bef0474031",
+              "source": "5555.md",
+              "score": 5.8678737,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6dec5dd579e8a69c5db9b54f65ce1a04713e8e82789619e5faeb217aa2faa9c",
+              "source": "5555.md",
+              "score": 5.5130625,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c56875570d730be0858808e331e89daf3e9e675b1a18bd4742dda019b2d355df",
+              "source": "5555.md",
+              "score": 4.8275166,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e19deb1bec07a6a0ab1881c10b4423b21593e54153c43798a576862178612221",
+              "source": "5555.md",
+              "score": 4.7811537,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "fc4ceb16b817d000359f6fcb984b397a92419db24e14e80cd851fce20d073fec",
+              "source": "5555.md",
+              "score": 4.743556,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4321f0600060834edd457db5a3e81438666445ac1222cf2b05f1a59f7f9d2500",
+              "source": "5555.md",
+              "score": 4.689998,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "15cda9766dfc274e6c18f7b4a39d7cbf323a9831abe56ebd39537839171e7fb4",
+              "source": "5555.md",
+              "score": 4.42411,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2dae17b9d50b77cb1f960826aeb9e6f7175aab158e9479c2e243c1d37860c932",
+              "source": "5555.md",
+              "score": 4.3652377,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 0,
+          "recall@1": 0.0,
+          "mrr@1": 0,
+          "ndcg@1": 0.0,
+          "hit@5": 1,
+          "recall@5": 1.0,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.38685280723454163,
+          "hit@10": 1,
+          "recall@10": 1.0,
+          "mrr@10": 0.2,
+          "ndcg@10": 0.38685280723454163
+        },
+        {
+          "id": "g3",
+          "query": "อาการของโรคกรดไหลย้อนเป็นอย่างไร",
+          "latency_ms": 2067.7323999116197,
+          "ranking": [
+            {
+              "chunk_id": "ce0513292789d2e02ddf9c42313ac953af7181e125465e781bf32a030b8fed29",
+              "source": "5555.md",
+              "score": 8.1379175,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "d2a71708b94c51164494dd5daba7f81c328af529c204b8ba6a37c0d7236b8f4c",
+              "source": "5555.md",
+              "score": 7.5550175,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "72be6f2ccd409159b2a6ef0e8d5f2eeb1333eee236d360b4a3e95ae980076871",
+              "source": "5555.md",
+              "score": 7.296959,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "76bffe2c8361b688b10e39b722815667eac5a99ab784af08869af1f15625b14c",
+              "source": "5555.md",
+              "score": 7.018655,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "56e0d5fc1fabb549753a5e4527d3835024504187ecb3faccb1c540857d80080a",
+              "source": "5555.md",
+              "score": 7.013352,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "f23808688bdb5543dea067e86568e64dd6d6cf3c8b7d58337c24c65b174eb2e6",
+              "source": "5555.md",
+              "score": 7.000301,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c58164bc8d15eda07d10590acdff364a0ee826590343c50f932f6a5c9433c66c",
+              "source": "5555.md",
+              "score": 6.9591527,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c22dcb4792577c0482eb85bc814be36a336d013c8e699f8133703eadca271c8c",
+              "source": "5555.md",
+              "score": 6.7998643,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "55b32b2b19c75d07e884cc880ef42ae758e5741395e5e7e1c1a395da4c310676",
+              "source": "5555.md",
+              "score": 6.7923074,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "daf47ec9338156501faffffe9a760a466779e21f334ab5e51ee149376d8db921",
+              "source": "5555.md",
+              "score": 6.6864505,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "6287970f506ae198eff99f7f5e59a6d1d22e0d5153b5b9bfce48b6bef0474031",
+              "source": "5555.md",
+              "score": 6.6825542,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "02cb6f41bd3962f853e1ab821dd20d69311bf0a75607a37ca62b42fa8dbe87e5",
+              "source": "5555.md",
+              "score": 6.6198683,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "19a5a5ba0bb0fdee36b8f0b57688830d9bc210bda852850348df86b2e3a5def9",
+              "source": "5555.md",
+              "score": 6.515389,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c6dec5dd579e8a69c5db9b54f65ce1a04713e8e82789619e5faeb217aa2faa9c",
+              "source": "5555.md",
+              "score": 6.257005,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "c56875570d730be0858808e331e89daf3e9e675b1a18bd4742dda019b2d355df",
+              "source": "5555.md",
+              "score": 5.2345376,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "15cda9766dfc274e6c18f7b4a39d7cbf323a9831abe56ebd39537839171e7fb4",
+              "source": "5555.md",
+              "score": 5.1557326,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "e19deb1bec07a6a0ab1881c10b4423b21593e54153c43798a576862178612221",
+              "source": "5555.md",
+              "score": 4.8531303,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "2dae17b9d50b77cb1f960826aeb9e6f7175aab158e9479c2e243c1d37860c932",
+              "source": "5555.md",
+              "score": 4.8279567,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "4321f0600060834edd457db5a3e81438666445ac1222cf2b05f1a59f7f9d2500",
+              "source": "5555.md",
+              "score": 4.802949,
+              "rerank_score": null
+            },
+            {
+              "chunk_id": "959f810d6347be65d1209405da29c80566ef5e1f3fe1144d3f18a01bbad156e6",
+              "source": "5555.md",
+              "score": 4.5059123,
+              "rerank_score": null
+            }
+          ],
+          "hit@1": 1,
+          "recall@1": 0.5,
+          "mrr@1": 1.0,
+          "ndcg@1": 1.0,
+          "hit@5": 1,
+          "recall@5": 0.5,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.6131471927654584,
+          "hit@10": 1,
+          "recall@10": 0.5,
+          "mrr@10": 1.0,
+          "ndcg@10": 0.6131471927654584
+        }
+      ]
+    }
+  },
+  "unmeasured": [
+    "answer correctness",
+    "faithfulness",
+    "citation support",
+    "unanswerable detection",
+    "contextualization quality",
+    "dense retrieval",
+    "hybrid retrieval",
+    "reranking"
+  ],
+  "chunk_checks": {
+    "character_coverage": 1.0,
+    "max_chunk_characters": 1200,
+    "unique_ids": true,
+    "note": "Coverage does not prove semantic boundary quality."
+  }
+}
